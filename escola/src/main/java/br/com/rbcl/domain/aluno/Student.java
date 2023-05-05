@@ -9,6 +9,7 @@ public class Student {
     private String name;
     private Email email;
     private List<Phone> phones = new ArrayList<Phone>();
+    private String senha;
 
     public Student(CPF cpf, String name, Email email) {
         this.cpf = cpf;
