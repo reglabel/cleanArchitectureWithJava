@@ -1,30 +1,30 @@
-package br.com.rbcl.aluno;
+package br.com.rbcl.domain.aluno;
 
-import br.com.rbcl.aluno.Phone;
+import br.com.rbcl.domain.aluno.CPF;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PhoneTest {
+class CPFTest {
     @Test
-    void shouldntCreatePhoneWIthInvalidNumber(){
+    void shouldntCreateCPFWIthInvalidNumber(){
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone(null);
+                        new CPF(null);
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone("");
+                        new CPF("");
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone("09878767676676867868768768");
+                        new CPF("09878767676676867868768768");
                     }
                 });
 
@@ -32,16 +32,13 @@ class PhoneTest {
 
     @Test
     void shouldCreateCPFWithValidNumber(){
-        Phone phoneWithPontuation = new Phone("(86) 99844-1481");
-        Phone phoneWithoutPontuation = new Phone("86998441481");
-
-        assertEquals("(86) 99844-1481", phoneWithPontuation.getNumber());
-        assertEquals("86998441481", phoneWithoutPontuation.getNumber());
+        CPF cpf = new CPF("083.863.753-10");
+        assertEquals("083.863.753-10", cpf.getNumber());
     }
-    
+
     @Test
-    void shouldReturnCorrectNumber() {
-        Phone phone = new Phone("(86) 99844-1481");
-        assertEquals("(86) 99844-1481", phone.getNumber());
+    void shouldReturnCorrectNumber(){
+        CPF cpf = new CPF("083.863.753-10");
+        assertEquals("083.863.753-10", cpf.getNumber());
     }
 }

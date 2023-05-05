@@ -1,4 +1,4 @@
-package br.com.rbcl.aluno;
+package br.com.rbcl.domain.aluno;
 
 public class Phone {
     private String number;

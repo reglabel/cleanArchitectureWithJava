@@ -1,6 +1,6 @@
-package br.com.rbcl.aluno;
+package br.com.rbcl.domain.aluno;
 
-import br.com.rbcl.aluno.Email;
+import br.com.rbcl.domain.aluno.Email;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 

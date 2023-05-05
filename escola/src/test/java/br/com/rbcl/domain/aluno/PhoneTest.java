@@ -1,30 +1,30 @@
-package br.com.rbcl.aluno;
+package br.com.rbcl.domain.aluno;
 
-import br.com.rbcl.aluno.CPF;
+import br.com.rbcl.domain.aluno.Phone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CPFTest {
+class PhoneTest {
     @Test
-    void shouldntCreateCPFWIthInvalidNumber(){
+    void shouldntCreatePhoneWIthInvalidNumber(){
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new CPF(null);
+                        new Phone(null);
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new CPF("");
+                        new Phone("");
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new CPF("09878767676676867868768768");
+                        new Phone("09878767676676867868768768");
                     }
                 });
 
@@ -32,13 +32,16 @@ class CPFTest {
 
     @Test
     void shouldCreateCPFWithValidNumber(){
-        CPF cpf = new CPF("083.863.753-10");
-        assertEquals("083.863.753-10", cpf.getNumber());
-    }
+        Phone phoneWithPontuation = new Phone("(86) 99844-1481");
+        Phone phoneWithoutPontuation = new Phone("86998441481");
 
+        assertEquals("(86) 99844-1481", phoneWithPontuation.getNumber());
+        assertEquals("86998441481", phoneWithoutPontuation.getNumber());
+    }
+    
     @Test
-    void shouldReturnCorrectNumber(){
-        CPF cpf = new CPF("083.863.753-10");
-        assertEquals("083.863.753-10", cpf.getNumber());
+    void shouldReturnCorrectNumber() {
+        Phone phone = new Phone("(86) 99844-1481");
+        assertEquals("(86) 99844-1481", phone.getNumber());
     }
 }

@@ -1,6 +1,6 @@
-package br.com.rbcl.indication;
+package br.com.rbcl.domain.indication;
 
-import br.com.rbcl.aluno.Student;
+import br.com.rbcl.domain.aluno.Student;
 
 import java.util.Date;
 

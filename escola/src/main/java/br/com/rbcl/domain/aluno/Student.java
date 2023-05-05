@@ -1,4 +1,4 @@
-package br.com.rbcl.aluno;
+package br.com.rbcl.domain.aluno;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +20,16 @@ public class Student {
         this.phones.add(phone);
     }
 
-    public CPF getCpf() {
-        return cpf;
+    public String getCpf() {
+        return cpf.getNumber();
     }
 
     public String getName() {
         return name;
     }
 
-    public Email getEmail() {
-        return email;
+    public String getEmail() {
+        return email.getAddress();
     }
 
     public List<Phone> getPhones() {
