@@ -1,3 +1,5 @@
+package br.com.rbcl.aluno;
+
 public class FactoryStudent {
     private Student student;
 

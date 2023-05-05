@@ -1,3 +1,5 @@
+package br.com.rbcl.aluno;
+
 public class Email {
     // VALUE OBJECT -> não possui um atributo identificador - nesse caso, se eu tiver duas instâncias com o mesmo endereço considero que é o mesmo email.
     private String address;

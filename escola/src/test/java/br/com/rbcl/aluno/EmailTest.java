@@ -1,44 +1,44 @@
+package br.com.rbcl.aluno;
+
+import br.com.rbcl.aluno.Email;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PhoneTest {
+class EmailTest {
     @Test
-    void shouldntCreatePhoneWIthInvalidNumber(){
+    void shouldntCreateEmailWIthInvalidAddress(){
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone(null);
+                        new Email(null);
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone("");
+                        new Email("");
                     }
                 });
         assertThrows(IllegalArgumentException.class,
                 new Executable() {
                     public void execute() throws Throwable {
-                        new Phone("09878767676676867868768768");
+                        new Email("invalidemail");
                     }
                 });
 
     }
 
     @Test
-    void shouldCreateCPFWithValidNumber(){
-        Phone phoneWithPontuation = new Phone("(86) 99844-1481");
-        Phone phoneWithoutPontuation = new Phone("86998441481");
-
-        assertEquals("(86) 99844-1481", phoneWithPontuation.getNumber());
-        assertEquals("86998441481", phoneWithoutPontuation.getNumber());
+    void shouldCreateEmailWithValidAddress(){
+        Email email = new Email("user@mail.com");
+        assertEquals("user@mail.com", email.getAddress());
     }
-    
+
     @Test
-    void shouldReturnCorrectNumber() {
-        Phone phone = new Phone("(86) 99844-1481");
-        assertEquals("(86) 99844-1481", phone.getNumber());
+    void shouldReturnCorrectAddress() {
+        Email email = new Email("user@mail.com");
+        assertEquals("user@mail.com", email.getAddress());
     }
 }

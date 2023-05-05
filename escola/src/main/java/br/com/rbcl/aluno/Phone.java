@@ -1,3 +1,5 @@
+package br.com.rbcl.aluno;
+
 public class Phone {
     private String number;
 

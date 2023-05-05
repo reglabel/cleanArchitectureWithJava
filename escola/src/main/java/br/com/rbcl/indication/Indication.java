@@ -1,4 +1,7 @@
-import java.time.LocalDateTime;
+package br.com.rbcl.indication;
+
+import br.com.rbcl.aluno.Student;
+
 import java.util.Date;
 
 public class Indication {

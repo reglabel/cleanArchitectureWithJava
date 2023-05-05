@@ -1,3 +1,6 @@
+package br.com.rbcl.aluno;
+
+import br.com.rbcl.aluno.CPF;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
